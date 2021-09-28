@@ -12,7 +12,12 @@
 		FD647B0D27033E7A00B24685 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD647B0C27033E7A00B24685 /* Assets.xcassets */; };
 		FD647B1027033E7A00B24685 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD647B0F27033E7A00B24685 /* Preview Assets.xcassets */; };
 		FD647B1227033E7A00B24685 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD647B1127033E7A00B24685 /* Persistence.swift */; };
-		FD647B1527033E7A00B24685 /* swiftUICoreDataIssue.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FD647B1327033E7A00B24685 /* swiftUICoreDataIssue.xcdatamodeld */; };
+		FD647B1C27034A0100B24685 /* PersonDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD647B1B27034A0100B24685 /* PersonDetailsView.swift */; };
+		FD647B2527034DC400B24685 /* swiftUICoreDataIssue.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FD647B1327033E7A00B24685 /* swiftUICoreDataIssue.xcdatamodeld */; };
+		FD647B2627034E1100B24685 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD647B1F27034C5700B24685 /* Person+CoreDataClass.swift */; };
+		FD647B2727034E1100B24685 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD647B2027034C5700B24685 /* Person+CoreDataProperties.swift */; };
+		FD647B2827034E1100B24685 /* Favorite+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD647B1D27034C5700B24685 /* Favorite+CoreDataClass.swift */; };
+		FD647B2927034E1100B24685 /* Favorite+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD647B1E27034C5700B24685 /* Favorite+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +28,11 @@
 		FD647B0F27033E7A00B24685 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FD647B1127033E7A00B24685 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		FD647B1427033E7A00B24685 /* swiftUICoreDataIssue.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = swiftUICoreDataIssue.xcdatamodel; sourceTree = "<group>"; };
+		FD647B1B27034A0100B24685 /* PersonDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailsView.swift; sourceTree = "<group>"; };
+		FD647B1D27034C5700B24685 /* Favorite+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorite+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FD647B1E27034C5700B24685 /* Favorite+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorite+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FD647B1F27034C5700B24685 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FD647B2027034C5700B24685 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,12 +65,17 @@
 		FD647B0727033E7800B24685 /* swiftUICoreDataIssue */ = {
 			isa = PBXGroup;
 			children = (
+				FD647B1D27034C5700B24685 /* Favorite+CoreDataClass.swift */,
+				FD647B1E27034C5700B24685 /* Favorite+CoreDataProperties.swift */,
+				FD647B1F27034C5700B24685 /* Person+CoreDataClass.swift */,
+				FD647B2027034C5700B24685 /* Person+CoreDataProperties.swift */,
 				FD647B0827033E7800B24685 /* swiftUICoreDataIssueApp.swift */,
 				FD647B0A27033E7800B24685 /* ContentView.swift */,
 				FD647B0C27033E7A00B24685 /* Assets.xcassets */,
 				FD647B1127033E7A00B24685 /* Persistence.swift */,
 				FD647B1327033E7A00B24685 /* swiftUICoreDataIssue.xcdatamodeld */,
 				FD647B0E27033E7A00B24685 /* Preview Content */,
+				FD647B1B27034A0100B24685 /* PersonDetailsView.swift */,
 			);
 			path = swiftUICoreDataIssue;
 			sourceTree = "<group>";
@@ -143,8 +158,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD647B1527033E7A00B24685 /* swiftUICoreDataIssue.xcdatamodeld in Sources */,
+				FD647B2727034E1100B24685 /* Person+CoreDataProperties.swift in Sources */,
+				FD647B2527034DC400B24685 /* swiftUICoreDataIssue.xcdatamodeld in Sources */,
 				FD647B1227033E7A00B24685 /* Persistence.swift in Sources */,
+				FD647B2827034E1100B24685 /* Favorite+CoreDataClass.swift in Sources */,
+				FD647B2627034E1100B24685 /* Person+CoreDataClass.swift in Sources */,
+				FD647B2927034E1100B24685 /* Favorite+CoreDataProperties.swift in Sources */,
+				FD647B1C27034A0100B24685 /* PersonDetailsView.swift in Sources */,
 				FD647B0B27033E7800B24685 /* ContentView.swift in Sources */,
 				FD647B0927033E7800B24685 /* swiftUICoreDataIssueApp.swift in Sources */,
 			);
@@ -277,7 +297,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"swiftUICoreDataIssue/Preview Content\"";
-				DEVELOPMENT_TEAM = JANZDS5D43;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -307,7 +327,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"swiftUICoreDataIssue/Preview Content\"";
-				DEVELOPMENT_TEAM = JANZDS5D43;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

@@ -12,26 +12,23 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \Person.name, ascending: true)],
         animation: .default)
-    private var items: FetchedResults<Item>
+    private var people: FetchedResults<Person>
 
     var body: some View {
         NavigationView {
             List {
-                ForEach(items) { item in
+                ForEach(people) { person in
                     NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                        PersonDetailsView(person: person)
                     } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
+                        Text(person.name ?? "Name Error")
                     }
                 }
                 .onDelete(perform: deleteItems)
             }
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
                 ToolbarItem {
                     Button(action: addItem) {
                         Label("Add Item", systemImage: "plus")
@@ -44,9 +41,17 @@ struct ContentView: View {
 
     private func addItem() {
         withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-
+            let newItem = Person.init(entity: Person.entity(), insertInto: viewContext)
+            newItem.name = "New Person"
+            let a = Favorite.init(entity: Favorite.entity(), insertInto: viewContext)
+            a.name = "Ice Cream"
+            newItem.addToFavorites(a)
+            let b = Favorite.init(entity: Favorite.entity(), insertInto: viewContext)
+            b.name = "Coffee"
+            newItem.addToFavorites(b)
+            let c = Favorite.init(entity: Favorite.entity(), insertInto: viewContext)
+            c.name = "Beer"
+            newItem.addToFavorites(c)
             do {
                 try viewContext.save()
             } catch {
@@ -60,7 +65,7 @@ struct ContentView: View {
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
+            offsets.map { people[$0] }.forEach(viewContext.delete)
 
             do {
                 try viewContext.save()
@@ -81,8 +86,4 @@ private let itemFormatter: DateFormatter = {
     return formatter
 }()
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-    }
-}
+
